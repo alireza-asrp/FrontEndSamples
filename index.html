@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="circle">
+        <div class="span-container">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <nav>
+        <h2>Brand</h2>
+        <ul>
+            <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="#"><i class="fa fa-google"></i>Account</a></li>
+            <li><a href="#"><i class="fa fa-comment"></i>Messages</a></li>
+            <li><a href="#"><i class="fa fa-bell"></i>News</a></li>
+            <li><a href="#"><i class="fa fa-info-circle"></i>About</a></li>
+        </ul>
+    </nav>
+
+
+    <script>
+
+        var isOpen = false;
+        var closeBtn = document.querySelector(".circle");
+        var navbar = document.querySelector("nav");
+        var items = document.querySelectorAll("nav ul li a");
+
+        closeBtn.addEventListener("click", function () {
+            if (isOpen == false){
+                closeBtn.className = "close-circle";
+                navbar.style.left = "0";
+                items.forEach(element => {
+                        element.style.left = "20%";
+                        element.style.opacity = "1";
+                        element.style.transitoin
+                });
+                isOpen = true;
+            }else{
+                closeBtn.className = "circle";
+                navbar.style.left = "-100%";
+                items.forEach(element => {
+                    element.style.left = "-100%";
+                    element.style.opacity = "0";
+                });
+                isOpen = false;
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
